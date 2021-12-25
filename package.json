@@ -2,9 +2,9 @@
   "name": "goit-js-hw-10",
   "version": "1.0.0",
   "description": "",
-
+  "main": "index.js",
   "scripts": {
-    "dev": "parcel src/*.html",
+    "dev": "parcel src/index.html",
     "build": "parcel build src/*.html --public-url /goit-js-hw-10"
   },
   "repository": {
@@ -20,5 +20,9 @@
   "homepage": "https://github.com/VVViktorVVV/goit-js-hw-10#src/index.html",
   "devDependencies": {
     "parcel": "^2.0.1"
+  },
+  "dependencies": {
+    "lodash.debounce": "^4.0.8",
+    "notiflix": "^3.2.2"
   }
 }
