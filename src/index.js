@@ -25,7 +25,11 @@ function findCountry() {
     } else {
         fetchCountries(countries)
             .then(renderCountriesList)
-            .catch(error => Notify.failure('Oops, there is no country with that name'));
+            .catch(error => {
+                countriesList.innerHTML = '';
+                countryInfo.innerHTML = '';
+                Notify.failure('Oops, there is no country with that name')
+            });
     }
     
     
@@ -44,7 +48,8 @@ function renderCountriesList(array) {
     if (array.length > 10) {
         return Notify.info('Too many matches found. Please enter a more specific name.')
     }
-    
+
+        
     if (array.length > 1 && array.length <= 10) {
         countriesList.innerHTML = countryElList;
         countryInfo.innerHTML = "";
@@ -57,7 +62,7 @@ function renderCountriesList(array) {
 
         document.querySelector('.item-box__name').classList.add('item-box__name--uniq');
         return
-    }
+    } 
         
 }
 
